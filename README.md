@@ -9,5 +9,14 @@ docker build --rm -t jfloff/app ./
 
 to run the image:
 ```
-docker run -d -p 8080:8080 jfloff/app
+docker run -d --env-file ./env.list -p 8080:8080 jfloff/app
 ```
+
+Test if it is running:
+
+The example app is a simple `bottle` server. You can test it by running
+
+```
+curl http://127.0.0.1:8080/hello/${USER}
+```
+
